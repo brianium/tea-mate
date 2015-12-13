@@ -1,0 +1,22 @@
+.menu {
+  color: $menu-font-color;
+}
+
+.menu__section {
+  margin-bottom: 2rem;
+}
+
+.menu__item {
+  margin-bottom: $menu-item-spacing;
+
+  a, a:link {
+    color: $menu-font-color;
+    font-variant: small-caps;
+  }
+}
+
+.menu__section__heading {
+  color: $menu-heading-color;
+  font-variant: small-caps;
+  margin-bottom: $menu-item-spacing;
+}

@@ -1,0 +1,24 @@
+.button {
+  border: none;
+  border-radius: $button-radius;
+  background-color: $brand-cta;
+  color: $type-inverted-color !important;
+  font-family: $font-body;
+  font-size: $button-font-size;
+  outline: none;
+  padding: $button-padding;
+  box-shadow: $button-inactive-shadow;
+  text-shadow: 0px -1px 1px darken($brand-cta, 20%);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.button:active {
+  background-color: darken($brand-cta, 5%);
+  box-shadow: $button-active-shadow;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}

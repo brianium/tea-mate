@@ -1,0 +1,43 @@
+.screen {
+  background-color: $brand-content;
+  position: absolute;
+  padding: $layout-padding;
+  @include transform(translate3d(-100%, 0, 0));
+  width: 100%;
+}
+
+.screen:target,
+.screen--active {
+  @include transform(translate3d(0, 0, 0));
+}
+
+.screen--transitioning-to {
+  position: fixed;
+  @include animation(transitionTo 0.2s ease-in);
+  z-index: 2;
+}
+
+.screen--transitioning-from {
+  position: fixed;
+  @include animation(transitionFrom 0.2s ease-in);
+  z-index: 1;
+}
+
+@include keyframes(transitionTo) {
+  from {
+    @include transform(translate3d(-100%, 0, 0));
+  }
+  to {
+    @include transform(translate3d(0, 0, 0));
+  }
+}
+
+
+@include keyframes(transitionFrom) {
+  from {
+    @include transform(translate3d(0, 0, 0));
+  }
+  to {
+    @include transform(translate3d(-100%, 0, 0));
+  }
+}

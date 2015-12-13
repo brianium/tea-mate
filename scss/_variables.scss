@@ -1,0 +1,48 @@
+/**
+ * Branding
+ */
+$brand-chrome: #2C3E50;
+$brand-content: #ECF0F1;
+$brand-error: #E74C3C;
+$brand-cta: #3498DB;
+$brand-cta-dark: #2980B9;
+
+/**
+ * Layout
+ */
+$layout-header-size: 3.5rem;
+$layout-padding: 0.8rem;
+
+/**
+ * Typography
+ */
+$font-body: Raleway, Georgia, serif;
+$font-headings: 'Open Sans', Helvetica, Arial, sans-serif;
+$type-color: #444;
+$type-inverted-color: #fff;
+
+/**
+ * Links
+ */
+$link-color: $brand-cta;
+
+/**
+ * Buttons
+ */
+$button-radius: 0.2rem;
+$button-font-size: 1.4rem;
+$button-padding: 0.6rem;
+$button-inactive-shadow: 0 0.30rem 0 darken($brand-cta, 25%);
+$button-active-shadow: 0 0.20rem 0 darken($brand-cta, 25%);
+
+/**
+ * Slideout
+ */
+ $slideout-bg: #1D1F20 linear-gradient(145deg, #1D1F20, #404348);
+
+/**
+ * Menu
+ */
+ $menu-heading-color: #85888d;
+ $menu-font-color: #fff;
+ $menu-item-spacing: 1.5rem;

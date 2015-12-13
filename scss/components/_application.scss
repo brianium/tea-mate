@@ -1,0 +1,36 @@
+.application {
+  @include display(flex);
+  @include flex-direction(column);
+  height: 100%;
+}
+
+.application__chrome {
+  @extend .text-inset;
+  @include display(flex);
+  @include align-items(center);
+  color: $type-inverted-color;
+  min-height: $layout-header-size;
+  max-height: $layout-header-size;
+  background-color: $brand-chrome;
+  padding: $layout-padding;
+}
+
+.application__header {
+  border-bottom: 1px solid lighten($brand-chrome, 45%);
+}
+
+.application__container {
+  @include flex(1);
+  background-color: $brand-content;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.application__container--transitioning {
+  z-index: 0;
+}
+
+.application__footer {
+  border-top: 1px solid lighten($brand-chrome, 45%);
+}
