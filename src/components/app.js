@@ -1,10 +1,8 @@
 import * as events from '../events';
 import * as navigate from '../navigation';
+import './timer';
 
-/**
- * Links function as internal app navigation
- */
-navigate.hijack();
+navigate.init();
 
 /**
  * Set up screen transitions when the location hash changes

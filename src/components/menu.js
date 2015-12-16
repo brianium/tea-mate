@@ -10,3 +10,9 @@ const slideout = new Slideout({
 const toggle = document.querySelector('.application__menu-toggle');
 
 toggle.addEventListener('click', () => slideout.toggle());
+
+// close the slideout menu when clicking a link
+const menuItems = document.querySelectorAll('.menu__item');
+for (let item of menuItems) {
+  item.addEventListener('click', () => slideout.close());
+}

@@ -1,5 +1,6 @@
 import * as monitor from './monitor';
 import * as events from '../events';
+import { hijack } from './links';
 
 /**
  * Get the offset height to use for the application container.
@@ -29,7 +30,7 @@ function transitionContainer() {
  * @param {HTMLElement} active
  * @param {HTMLElement} inactive
  */
-function swapActive(active, inactive) {
+export function swapActive(active, inactive) {
   active.classList.remove('screen--active');
   inactive.classList.add('screen--active');
 }
@@ -116,4 +117,18 @@ export function to(screen = 'home') {
   transition(previous, target);
 }
 
-export { hijack } from './links';
+/**
+ * Initialize navigation for the app
+ */
+export function init() {
+  hijack();
+  const screenId = location.hash.replace('#', '') || 'home';
+  const screen = document.getElementById(screenId);
+
+  if (screen.classList.contains('screen--active')) {
+    return void 0;
+  }
+
+  const active = document.querySelector('.screen--active');
+  swapActive(active, screen);
+}

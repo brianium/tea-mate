@@ -1,0 +1,30 @@
+.minute-timer {
+  background-color: #efefef;
+  color: #444;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 5rem;
+  width: 100%;
+}
+
+.minute-timer:before,
+.minute-timer:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.minute-timer:after {
+  clear: both;
+}
+
+.minute-timer__component {
+  background-color: #fff;
+  float: left;
+  margin-left: 0.7rem;
+  padding: 0 1.2rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset, -1px -1px 3px rgba(0, 0, 0, 0.2) inset;
+}
+
+.minute-timer__component:first-child {
+  margin-left: 0;
+}
