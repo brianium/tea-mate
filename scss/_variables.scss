@@ -46,3 +46,19 @@ $button-active-shadow: 0 0.20rem 0 darken($brand-cta, 25%);
  $menu-heading-color: #85888d;
  $menu-font-color: #fff;
  $menu-item-spacing: 1.5rem;
+
+ /**
+  * Tea Colors
+  */
+$tea-green: green;
+$tea-black: #5e270c;
+$tea-white: white;
+$tea-oolong: #ffc35a;
+$tea-puerh: #9c793d;
+$tea-yellow: yellow;
+$tea-herbal: #c5a1f2;
+
+/**
+ * Tea Nav
+ */
+$tea-nav-bg: darken($brand-cta-dark, 25%);

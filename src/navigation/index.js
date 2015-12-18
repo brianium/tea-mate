@@ -1,6 +1,7 @@
 import * as monitor from './monitor';
 import * as events from '../events';
 import { hijack } from './links';
+import { reflowY } from '../screen';
 
 /**
  * Get the offset height to use for the application container.
@@ -59,9 +60,7 @@ function transitionTo(screen, offset) {
  */
 function onTransitionTo(container) {
   return function completeTransitionTo(e) {
-    const to = e.target;
-    to.style.overflowY = 'hidden';
-    setTimeout(() => to.style.overflowY = 'auto');
+    const to = reflowY(e.target);
     to.classList.remove('screen--transitioning-to');
     container.classList.remove('application__container--transitioning');
     to.style.top = to.style.bottom = 'auto';

@@ -1,0 +1,66 @@
+.tea-nav__items {
+  @include display(flex);
+  @include flex-direction(row);
+  @include flex-wrap(no-wrap);
+  @include justify-content(center);
+  background-color: $tea-nav-bg;
+  margin: (-$layout-padding) (-$layout-padding) 2.7rem (-$layout-padding);
+}
+
+@media screen and (min-width: 480px) {
+  .tea-nav__items {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.tea-nav__item {
+  background-color: $tea-nav-bg;
+  padding: 1rem 0.3rem;
+  text-align: center;
+  @include transition-property(background-color);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-in-out);
+  &:active {
+    background-color: lighten($tea-nav-bg, 8%);
+  }
+}
+
+.tea-nav__item-text {
+  color: #fff;
+  display: block;
+  font-variant: small-caps;
+  position: relative;
+  right: 0.25rem;
+}
+
+.tea-nav__icon {
+  width: 2.5rem;
+}
+
+.tea-nav__icon--green {
+  fill: $tea-green;
+}
+
+.tea-nav__icon--black {
+  fill: $tea-black;
+}
+
+.tea-nav__icon--white {
+  fill: $tea-white;
+}
+
+.tea-nav__icon--oolong {
+  fill: $tea-oolong;
+}
+
+.tea-nav__icon--puerh {
+  fill: $tea-puerh;
+}
+
+.tea-nav__icon--herbal {
+  fill: $tea-herbal;
+}
+
+.tea-nav__icon--yellow {
+  fill: $tea-yellow;
+}
