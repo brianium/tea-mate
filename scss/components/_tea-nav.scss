@@ -20,9 +20,11 @@
   @include transition-property(background-color);
   @include transition-duration(0.2s);
   @include transition-timing-function(ease-in-out);
-  &:active {
-    background-color: lighten($tea-nav-bg, 8%);
-  }
+}
+
+.tea-nav__item:active,
+.tea-nav__item--active {
+  background-color: lighten($tea-nav-bg, 8%);
 }
 
 .tea-nav__item-text {

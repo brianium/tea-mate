@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "id": "green",
+      "temperature": {
+        "min": 170,
+        "max": 180
+      },
+      "time": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    {
+      "id": "white",
+      "temperature": {
+        "min": 170,
+        "max": 180
+      },
+      "time": {
+        "min": 3,
+        "max": 5
+      }
+    },
+    {
+      "id": "oolong",
+      "temperature": {
+        "min": 195,
+        "max": 205
+      },
+      "time": {
+        "min": 3,
+        "max": 6
+      }
+    },
+    {
+      "id": "puerh",
+      "temperature": {
+        "min": 200,
+        "max": 210
+      },
+      "time": {
+        "min": 3,
+        "max": 5
+      }
+    },
+    {
+      "id": "black",
+      "temperature": {
+        "min": 205,
+        "max": 210
+      },
+      "time": {
+        "min": 3,
+        "max": 5
+      }
+    },
+    {
+      "id": "herbal",
+      "temperature": {
+        "min": 200,
+        "max": 210
+      },
+      "time": {
+        "min": 1,
+        "max": 10
+      }
+    }
+  ]
+}
