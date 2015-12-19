@@ -6,6 +6,7 @@ $brand-content: #ECF0F1;
 $brand-error: #E74C3C;
 $brand-cta: #3498DB;
 $brand-cta-dark: #2980B9;
+$brand-info: lightyellow;
 
 /**
  * Layout
@@ -20,6 +21,8 @@ $font-body: Raleway, Georgia, serif;
 $font-headings: 'Open Sans', Helvetica, Arial, sans-serif;
 $type-color: #444;
 $type-inverted-color: #fff;
+$info-font-size: 80%;
+$info-font-color: #666;
 
 /**
  * Links
@@ -62,3 +65,8 @@ $tea-herbal: #c5a1f2;
  * Tea Nav
  */
 $tea-nav-bg: darken($brand-cta-dark, 25%);
+
+/**
+ * Breakpoints
+ */
+$wide-device: 480px; 

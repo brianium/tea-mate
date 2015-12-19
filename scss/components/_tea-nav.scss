@@ -4,10 +4,10 @@
   @include flex-wrap(no-wrap);
   @include justify-content(center);
   background-color: $tea-nav-bg;
-  margin: (-$layout-padding) (-$layout-padding) 2.7rem (-$layout-padding);
+  margin: (-$layout-padding) (-$layout-padding) $layout-padding (-$layout-padding);
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: $wide-device) {
   .tea-nav__items {
     margin-bottom: 1.2rem;
   }

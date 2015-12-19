@@ -1,0 +1,39 @@
+.tea-info {
+  background-color: $brand-info;
+  margin-top: (-$layout-padding);
+  font-size: $info-font-size;
+  color: $info-font-color;
+  font-variant: small-caps;
+}
+
+@media screen and (min-width: $wide-device) {
+  .tea-info {
+    margin-top: -1.2rem;
+  }
+}
+
+.tea-info__terms {
+  margin:0 auto 1.5rem auto;
+  overflow: hidden;
+  width: 18.4rem;
+  padding: 0.5rem 0;
+}
+
+.tea-info__term {
+  clear:left;
+  float: left;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  &:after {
+    content: ':';
+  }
+}
+
+.tea-info__data {
+  margin: 0 0 0.4rem 0;
+  float: left;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

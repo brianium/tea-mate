@@ -6,6 +6,11 @@
   width: 100%;
 }
 
+.screen__container {
+  margin-left: (-$layout-padding) ;
+  margin-right: (-$layout-padding);
+}
+
 .screen:target,
 .screen--active {
   @include transform(translate3d(0, 0, 0));

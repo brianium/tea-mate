@@ -4,7 +4,7 @@ html {
   height: 100%;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: $wide-device) {
   html {
     font-size: 100%;
   }
