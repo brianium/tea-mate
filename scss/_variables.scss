@@ -11,7 +11,7 @@ $brand-info: lightyellow;
 /**
  * Layout
  */
-$layout-header-size: 3.5rem;
+$layout-header-size: 3rem;
 $layout-padding: 0.8rem;
 
 /**
@@ -69,4 +69,13 @@ $tea-nav-bg: darken($brand-cta-dark, 25%);
 /**
  * Breakpoints
  */
-$wide-device: 480px; 
+$wide-device: 480px;
+
+/**
+ * Timer
+ */
+ $timer-control-color: #fff;
+ $timer-control-decrement-icon: "\f107";
+ $timer-control-increment-icon: "\f106";
+ $timer-control-bg: $brand-cta;
+ $timer-control-height: 0.7rem;

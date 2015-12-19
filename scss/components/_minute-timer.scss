@@ -18,6 +18,7 @@
 }
 
 .minute-timer__component {
+  position: relative;
   background-color: #fff;
   float: left;
   margin-left: 0.7rem;
@@ -27,4 +28,31 @@
 
 .minute-timer__component:first-child {
   margin-left: 0;
+}
+
+.minute-timer__control {
+  color: $timer-control-color;
+  font-family: "FontAwesome";
+  font-size: 15%;
+  text-align: center;
+  background: $timer-control-bg;
+  position: absolute;
+  left:0;
+  height: $timer-control-height;
+  width: 100%;
+  z-index: 99;
+
+  &--increment {
+    &:after {
+      content: $timer-control-increment-icon;
+    }
+    top:0;
+  }
+
+  &--decrement {
+    &:after {
+      content: $timer-control-decrement-icon;
+    }
+    bottom:0;
+  }
 }

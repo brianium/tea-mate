@@ -1,4 +1,5 @@
-import {timer, view} from 'minute-timer';
+import { timer } from 'minute-timer';
+import * as digital from './view';
 
 /**
  * Create the timer
@@ -6,6 +7,10 @@ import {timer, view} from 'minute-timer';
 const state = {
   minutes: 3
 };
+
+/**
+ * A single mutable timer
+ */
 let teaTimer = timer.create(state);
 
 /**
@@ -13,7 +18,7 @@ let teaTimer = timer.create(state);
  */
 const element = document.querySelector('.timer');
 const control = document.querySelector('.button--control');
-view.digital.create(element, teaTimer);
+digital.create(element, teaTimer);
 
 /**
  * Update the button text and flag the timer as started
@@ -70,7 +75,7 @@ export function start() {
  */
 function reset() {
   teaTimer = timer.create(state);
-  view.digital.update(element, teaTimer);
-  view.digital.bind(element, teaTimer);
+  digital.update(element, teaTimer);
+  digital.bind(element, teaTimer);
   start();
 }
