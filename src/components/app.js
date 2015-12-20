@@ -15,8 +15,3 @@ events.hashchange(() => navigate.to(location.hash.replace('#', '') || 'home'));
  */
 const portrait = window.matchMedia("(orientation: portrait)");
 portrait.addListener(() => reflowY(document.querySelector('.screen--active')));
-
-/**
- * Disable context menus
- */
-window.addEventListener('contextmenu', e => e.preventDefault());

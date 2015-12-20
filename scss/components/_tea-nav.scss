@@ -15,7 +15,7 @@
 
 .tea-nav__item {
   background-color: $tea-nav-bg;
-  padding: 1rem 0.3rem;
+  padding: $tea-nav-item-padding;
   text-align: center;
   @include transition-property(background-color);
   @include transition-duration(0.2s);
@@ -31,12 +31,13 @@
   color: #fff;
   display: block;
   font-variant: small-caps;
+  font-size: $tea-nav-text-size;
   position: relative;
   right: 0.25rem;
 }
 
 .tea-nav__icon {
-  width: 2.5rem;
+  width: 1.5rem;
 }
 
 .tea-nav__icon--green {
