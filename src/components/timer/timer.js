@@ -8,6 +8,9 @@ const state = {
   minutes: 3
 };
 
+const MINUTES_MAX = 9;
+const SECONDS_MAX = 55;
+
 /**
  * The timer. Maintains a single mutable reference
  */
@@ -76,8 +79,9 @@ function onControlClick() {
  */
 function incrementMinutes() {
   const { minutes, seconds } = teaTimer.state;
+  const incremented = minutes + 1;
   timer.update(teaTimer, {
-    minutes: minutes + 1,
+    minutes: incremented > MINUTES_MAX ? 0 : incremented,
     seconds
   });
 }
@@ -87,9 +91,10 @@ function incrementMinutes() {
  */
 function incrementSeconds() {
   const { minutes, seconds } = teaTimer.state;
+  const incremented = seconds + 5;
   timer.update(teaTimer, {
     minutes,
-    seconds: seconds + 1
+    seconds: incremented > SECONDS_MAX ? 0 : incremented
   });
 }
 
@@ -98,8 +103,9 @@ function incrementSeconds() {
  */
 function decrementMinutes() {
   const { minutes, seconds } = teaTimer.state;
+  const decremented = minutes - 1;
   timer.update(teaTimer, {
-    minutes: Math.max(minutes - 1, 0),
+    minutes: decremented >= 0 ? decremented : MINUTES_MAX,
     seconds
   });
 }
@@ -109,9 +115,10 @@ function decrementMinutes() {
  */
 function decrementSeconds() {
   const { minutes, seconds } = teaTimer.state;
+  const decremented = seconds - 5;
   timer.update(teaTimer, {
     minutes,
-    seconds: Math.max(seconds - 1, 0)
+    seconds: decremented >= 0 ? decremented : SECONDS_MAX
   });
 }
 
