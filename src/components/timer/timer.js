@@ -1,12 +1,6 @@
 import { timer } from 'minute-timer';
 import * as digital from './view';
-
-/**
- * Create the timer
- */
-const state = {
-  minutes: 3
-};
+import TeaStore from '../../data/tea-store';
 
 const MINUTES_MAX = 9;
 const SECONDS_MAX = 55;
@@ -14,7 +8,18 @@ const SECONDS_MAX = 55;
 /**
  * The timer. Maintains a single mutable reference
  */
-let teaTimer = timer.create(state);
+let teaTimer = timer.create({
+  minutes: TeaStore.focused.time.max
+});
+
+/**
+ * When a new tea gains focus, update the timer state
+ */
+TeaStore.addFocusListener(() => {
+  timer.update(teaTimer, {
+    minutes: TeaStore.focused.time.max
+  });
+});
 
 /**
  * Timer view
@@ -145,7 +150,9 @@ export function start() {
  * Reset the timer
  */
 function reset() {
-  teaTimer = timer.update(teaTimer, state);
+  teaTimer = timer.update(teaTimer, {
+    minutes: TeaStore.focused.time.max
+  });
   digital.observer.removeAllListeners();
   digital.update(element, teaTimer);
   digital.bind(element, teaTimer);

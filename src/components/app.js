@@ -2,6 +2,8 @@ import * as events from '../events';
 import * as navigate from '../navigation';
 import { reflowY } from '../screen';
 import './timer';
+import './tea-nav';
+import './menu';
 
 navigate.init();
 
