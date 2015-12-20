@@ -4,6 +4,7 @@ import { reflowY } from '../screen';
 import './timer';
 import './tea-nav';
 import './menu';
+import './tea-info';
 
 navigate.init();
 
