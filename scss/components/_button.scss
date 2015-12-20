@@ -13,6 +13,10 @@
   text-align: center;
 }
 
+.button[disabled="disabled"] {
+  opacity: 0.5;
+}
+
 .button:active {
   background-color: darken($brand-cta, 5%);
   box-shadow: $button-active-shadow;

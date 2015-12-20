@@ -9,7 +9,7 @@ const state = {
 };
 
 /**
- * A single mutable timer
+ * The timer. Maintains a single mutable reference
  */
 let teaTimer = timer.create(state);
 
@@ -22,6 +22,8 @@ digital.create(element, teaTimer);
 
 /**
  * Update the button text and flag the timer as started
+ *
+ * @param {Timer} timer
  */
 function onStart(timer) {
   control.innerHTML = 'Stop Timer';
@@ -30,6 +32,8 @@ function onStart(timer) {
 
 /**
  * Update the button text and flag the timer as stopped
+ *
+ * @param {Timer} stopped
  */
 function onStop(stopped) {
   control.innerHTML = 'Start Timer';
@@ -41,10 +45,19 @@ function onStop(stopped) {
 }
 
 /**
- * Update the timer instance to the new timer
+ * Update the timer instance to the new timer. Updating the state
+ * to 0 for both seconds and minutes will disable the start button
+ *
+ * @param {Timer} timer
  */
-function onTick(timer) {
+function onUpdate(timer) {
+  const { minutes, seconds } = timer.state;
   teaTimer = timer;
+  if (minutes === 0 && seconds === 0) {
+    control.setAttribute('disabled', 'disabled');
+  } else {
+    control.removeAttribute('disabled');
+  }
 }
 
 /**
@@ -59,6 +72,50 @@ function onControlClick() {
 }
 
 /**
+ * Fires in response to clicking the minute increment control
+ */
+function incrementMinutes() {
+  const { minutes, seconds } = teaTimer.state;
+  timer.update(teaTimer, {
+    minutes: minutes + 1,
+    seconds
+  });
+}
+
+/**
+ * Fires in response to clicking the second increment control
+ */
+function incrementSeconds() {
+  const { minutes, seconds } = teaTimer.state;
+  timer.update(teaTimer, {
+    minutes,
+    seconds: seconds + 1
+  });
+}
+
+/**
+ * Fires in response to clicking the minute decrement control
+ */
+function decrementMinutes() {
+  const { minutes, seconds } = teaTimer.state;
+  timer.update(teaTimer, {
+    minutes: Math.max(minutes - 1, 0),
+    seconds
+  });
+}
+
+/**
+ * Fires in response to the seconds decrement control
+ */
+function decrementSeconds() {
+  const { minutes, seconds } = teaTimer.state;
+  timer.update(teaTimer, {
+    minutes,
+    seconds: Math.max(seconds - 1, 0)
+  });
+}
+
+/**
  * Listen for timer events
  *
  * @param {HTMLElement} control - the element that starts the timer
@@ -66,7 +123,14 @@ function onControlClick() {
 export function start() {
   teaTimer.on('start', onStart);
   teaTimer.on('stop', onStop);
-  teaTimer.on('tick', onTick);
+  teaTimer.on('tick', onUpdate);
+  teaTimer.on('update', onUpdate)
+
+  digital.observer.on('increment-minutes', incrementMinutes);
+  digital.observer.on('increment-seconds', incrementSeconds);
+  digital.observer.on('decrement-minutes', decrementMinutes);
+  digital.observer.on('decrement-seconds', decrementSeconds);
+
   control.addEventListener('click', onControlClick);
 }
 
@@ -74,7 +138,8 @@ export function start() {
  * Reset the timer
  */
 function reset() {
-  teaTimer = timer.create(state);
+  teaTimer = timer.update(teaTimer, state);
+  digital.observer.removeAllListeners();
   digital.update(element, teaTimer);
   digital.bind(element, teaTimer);
   start();

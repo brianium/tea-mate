@@ -31,11 +31,15 @@
 }
 
 .minute-timer__control {
+  @include user-select(none);
+  outline: none;
+  border: none;
   color: $timer-control-color;
   font-family: "FontAwesome";
   font-size: 15%;
   text-align: center;
   background: $timer-control-bg;
+  padding: 0;
   position: absolute;
   left:0;
   height: $timer-control-height;

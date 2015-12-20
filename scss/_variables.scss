@@ -6,7 +6,7 @@ $brand-content: #ECF0F1;
 $brand-error: #E74C3C;
 $brand-cta: #3498DB;
 $brand-cta-dark: #2980B9;
-$brand-info: lightyellow;
+$brand-info: lighten($brand-cta, 30%);
 
 /**
  * Layout
