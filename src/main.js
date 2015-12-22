@@ -4,6 +4,11 @@
 require('babel-polyfill');
 
 /**
+ * Vendor
+ */
+require('./vendor/addtohomescreen');
+
+/**
  * components
  */
 require('./components/app');

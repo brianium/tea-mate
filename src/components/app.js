@@ -18,3 +18,10 @@ events.hashchange(() => navigate.to(location.hash.replace('#', '') || 'home'));
  */
 const portrait = window.matchMedia("(orientation: portrait)");
 portrait.addListener(() => reflowY(document.querySelector('.screen--active')));
+
+/**
+ * Because mobile web apps are still a thing?
+ */
+addToHomescreen({
+  skipFirstVisit: true
+});

@@ -11,6 +11,7 @@
   text-shadow: 0px -1px 1px darken($brand-cta, 20%);
   text-transform: uppercase;
   text-align: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .button[disabled="disabled"] {
